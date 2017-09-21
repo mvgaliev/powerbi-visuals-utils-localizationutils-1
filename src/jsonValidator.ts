@@ -14,7 +14,7 @@ class JsonValidator {
         for (let visualName in visualNames) {            
             if (visualNames[visualName]) { 
                 console.log(visualName + ": getting all directories.");
-                let visualResourcesPath: string = path.join(__dirname, "../..", visualName);
+                let visualResourcesPath: string = path.join(__dirname, visualName);
 
                 let localeFolders: string[] = fs.readdirSync(visualResourcesPath)
                                           .map(name => path.join(visualResourcesPath, name))
