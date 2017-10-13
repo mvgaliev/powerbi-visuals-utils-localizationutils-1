@@ -23,7 +23,7 @@ export class JsonLoader {
 
     private static BuildUrl(visualName: string, type: SourceType, updateType: UpdateType, folder?: string, forceMicrosoftMasterSource?: boolean): string {
         
-        let repoPath: string = forceMicrosoftMasterSource || (updateType === UpdateType.CvToUtils && type === SourceType.LocalizationStrings) ? JsonLoader.microsoftPath : JsonLoader.pbicvbotPath;
+        let repoPath: string = /*forceMicrosoftMasterSource || (updateType === UpdateType.CvToUtils && type === SourceType.LocalizationStrings) ? */JsonLoader.microsoftPath;// : JsonLoader.pbicvbotPath;
 
         if (type === SourceType.Capabilities) {
             return JsonLoader.microsoftPath + visualName + "/master/capabilities.json";

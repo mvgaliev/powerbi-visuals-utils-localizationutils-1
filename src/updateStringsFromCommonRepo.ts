@@ -8,10 +8,10 @@ import * as GitHubApi from "github";
 
 class LocalizationStringsUtils {
     public static async Parse() {
-        await BranchCreator.CreateBranchesIfNotExist(UpdateBranch.FromUtils);
+       // await BranchCreator.CreateBranchesIfNotExist(UpdateBranch.FromUtils);
 
         let sourceJsons: IndexedObjects = await JsonLoader.GetJsonsWithFoldersFromGithub(SourceType.UtilsRepo, UpdateType.UtilsToCv),
-            destinationJsons: IndexedObjects = await JsonLoader.GetJsonsWithFoldersFromGithub(SourceType.LocalizationStrings, UpdateType.UtilsToCv, undefined, true);
+            destinationJsons: IndexedObjects = await JsonLoader.GetJsonsWithFoldersFromGithub(SourceType.LocalizationStrings, UpdateType.UtilsToCv, true, false);
 
         let updatedVisuals: IndexedObjects = LocalizationStringsUpdater.UpdateDestinationFolders(sourceJsons, destinationJsons);
         
